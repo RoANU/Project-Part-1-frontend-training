@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Documents</title>
+    <link rel="stylesheet" href="../CSS/shared.css" /> <!--adding shared css-->
+    <link rel="stylesheet" href="../CSS/upload-pop-up.css" /> <!--adding shared css-->
+    <link rel="stylesheet" href="../CSS/delete-pop-up.css" /> <!--adding shared css-->
+    <style>
+        .flex-container-head {
+            display: flex;
+            background-color: rgb(191, 191, 191);
+            border: .19vw solid black;
+            border-radius: 5px;
+        }
+
+        .flex-item-head {
+            flex-grow: 2;
+            text-align: center;
+            padding: 15px 0px;
+            color: black;
+        }
+
+        .sub-head-2 {
+            border-left: .19vw solid black;
+        }
+
+        .sub-head-3 {
+            border-left: .19vw solid black;
+            border-right: .19vw solid black;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        .flex-container-my-uploads {
+            display: flex;
+            border: .20vw solid black;
+            border-radius: 5px;
+            flex-wrap: wrap;
+        }
+
+        .flex-item-my-uploads {
+            width: 39vw;
+            text-align: center;
+            padding-top: 6px;
+            padding-bottom: 6px;
+        }
+
+        .col-1-my-upload {
+            text-align: left;
+            padding-left: 1.2vw;
+        }
+
+        .col-2-my-upload {
+            border-left: .20vw solid black;
+            border-right: .20vw solid black;
+        }
+
+        .col-3-my-upload {
+            width: 20vw;
+        }
+
+        a {
+            width: 25%;
+            text-decoration: none;
+        }
+
+        div~span {
+            position: absolute;
+            bottom: 2px;
+            left: 0px;
+            text-decoration: none;
+            color: black;
+            border: .20vw solid black;
+            border-radius: 5px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body class="font-prop-shared" style="margin: 0px;">
+    <div class="flex-container-head">
+        <a href="../HTML/chat.html">
+            <div class="flex-item-head sub-head-1">Group Chat</div>
+        </a>
+        <a href="../HTML/users-list.html">
+            <div class="flex-item-head sub-head-2">Manage Users</div>
+        </a>
+        <a href="../HTML/documents-list.html">
+            <div class="flex-item-head sub-head-3">Manage Documents</div>
+        </a>
+        <a href="../HTML/logout.html">
+            <div class="flex-item-head sub-head-4">Logout</div>
+        </a>
+    </div>
+    <br>
+    <h1>My Uploads</h1>
+    <br>
+    <div class="flex-container-my-uploads">
+        <div class="flex-item-my-uploads col-1-my-upload" style="background-color: rgb(204, 204, 204);">Label</div>
+        <div class="flex-item-my-uploads col-2-my-upload" style="background-color: rgb(204, 204, 204);">File Name</div>
+        <div class="flex-item-my-uploads col-3-my-upload" style="background-color: rgb(204, 204, 204);">Action</div>
+
+        <div class="flex-item-my-uploads col-1-my-upload" style="background-color: white;">Sales Report
+        </div>
+        <div class="flex-item-my-uploads col-2-my-upload" style="background-color: white;">sales.xlsx</div>
+        <div class="flex-item-my-uploads col-3-my-upload" style="background-color: white;">
+            <span style="text-decoration: none; color: black;" onclick="show_edit_pop_up()">Edit</span> |
+            <span style="text-decoration: none; color: black;" onclick="show_delete_pop_up()">Delete</span>
+        </div>
+
+        <div class="flex-item-my-uploads col-1-my-upload" style="background-color: rgb(240, 240, 240);">Quaterly
+            Summary</div>
+        <div class="flex-item-my-uploads col-2-my-upload" style="background-color: rgb(240, 240, 240);">summary.xlsx
+        </div>
+        <div class="flex-item-my-uploads col-3-my-upload" style="background-color: rgb(240, 240, 240);">
+            <span style="text-decoration: none; color: black;" onclick="show_edit_pop_up()">Edit</span> |
+            <span style="text-decoration: none; color: black;" onclick="show_delete_pop_up()">Delete</span>
+        </div>
+
+        <div class="flex-item-my-uploads col-1-my-upload" style="background-color: white;">Projection
+        </div>
+        <div class="flex-item-my-uploads col-2-my-upload" style="background-color: white;">projection.xlsx</div>
+        <div class="flex-item-my-uploads col-3-my-upload" style="background-color: white;">
+            <span style="text-decoration: none; color: black;" onclick="show_edit_pop_up()">Edit</span> |
+            <span style="text-decoration: none; color: black;" onclick="show_delete_pop_up()">Delete</span>
+        </div>
+
+        <div class="flex-item-my-uploads col-1-my-upload" style="background-color: rgb(240, 240, 240);"></div>
+        <div class="flex-item-my-uploads col-2-my-upload" style="background-color: rgb(240, 240, 240);"></div>
+        <div class="flex-item-my-uploads col-3-my-upload" style="background-color: rgb(240, 240, 240);">
+        </div>
+    </div>
+    <br>
+    <h1>Shared Uploads</h1>
+    <br>
+    <div style="position: relative;">
+        <div class="flex-container-my-uploads">
+            <div class="flex-item-my-uploads col-1-my-upload" style="background-color: rgb(204, 204, 204);">Label</div>
+            <div class="flex-item-my-uploads col-2-my-upload" style="background-color: rgb(204, 204, 204);">File Name
+            </div>
+            <div class="flex-item-my-uploads col-3-my-upload" style="background-color: rgb(204, 204, 204);">Shared by
+            </div>
+
+            <div class="flex-item-my-uploads col-1-my-upload" style="background-color: white;">Sales Team attendence
+            </div>
+            <div class="flex-item-my-uploads col-2-my-upload" style="background-color: white;">sales.xlsx</div>
+            <div class="flex-item-my-uploads col-3-my-upload" style="background-color: white;">anne.hunter@mail.com
+            </div>
+
+            <div class="flex-item-my-uploads col-1-my-upload" style="background-color: rgb(240, 240, 240);">sales
+                template
+                Summary</div>
+            <div class="flex-item-my-uploads col-2-my-upload" style="background-color: rgb(240, 240, 240);">
+                sales_template.xlsx
+            </div>
+            <div class="flex-item-my-uploads col-3-my-upload" style="background-color: rgb(240, 240, 240);">
+                robin@mail.com
+            </div>
+
+            <div class="flex-item-my-uploads col-1-my-upload" style="background-color: white;">X products
+            </div>
+            <div class="flex-item-my-uploads col-2-my-upload" style="background-color: white;">product_list.xlsx</div>
+            <div class="flex-item-my-uploads col-3-my-upload" style="background-color: white;">rohit@mail.com
+            </div>
+
+            <div class="flex-item-my-uploads col-1-my-upload" style="background-color: rgb(240, 240, 240);">
+            </div>
+            <div class="flex-item-my-uploads col-2-my-upload" style="background-color: rgb(240, 240, 240);"></div>
+            <div class="flex-item-my-uploads col-3-my-upload" style="background-color: rgb(240, 240, 240);">
+            </div>
+
+        </div>
+        <span onclick="show_upload_pop_up()">+ Add Upload</span>
+    </div>
+
+    <div class="upload-pop-up" id="upload-pop-up">
+        <p>
+            <span>Upload</span>
+            <img src="../IMAGES/cancel.JPG" style="float: right; width: 30px;" />
+        </p>
+        <p>
+            File Description
+            <input type="text" value="sample.txt" class="button-prop-shared" size="30" />
+            <br>
+            <br>
+            File Upload
+            <input type="file" name="" id="" />
+        </p>
+        <p>
+            <button class="button-prop-shared" onclick="clicked_upload()">Upload now</button>
+            <button class="button-prop-shared" onclick="clicked_cancel('upload-pop-up')">Cancel</button>
+        </p>
+    </div>
+
+    <div class="upload-pop-up" id="edit-pop-up">
+        <p>
+            <span>Edit</span>
+            <img src="../IMAGES/cancel.JPG" style="float: right; width: 30px;" />
+        </p>
+        <p>
+            File Description
+            <input type="text" value="sales report" class="button-prop-shared" size="30" />
+            <br>
+        </p>
+        <p>
+            <button class="button-prop-shared" onclick="clicked_save()">Save</button>
+            <button class="button-prop-shared" onclick="clicked_cancel('edit-pop-up')">Cancel</button>
+        </p>
+    </div>
+
+    <div class="delete-pop-up" id="delete-pop-up">
+        <p>
+            <span>Confirm User Deletion</span>
+            <img src="../IMAGES/cancel.JPG" style="float: right; width: 30px;" />
+        </p>
+        <p>
+            <img src="../IMAGES/question_mark.JPG" style="width: 30px;" />
+            <span>Are you sure?</span>
+        </p>
+        <p>
+            <button class="button-prop-shared" onclick="clicked_ok()">ok</button>
+            <button class="button-prop-shared" onclick="clicked_cancel('delete-pop-up')">Cancel</button>
+        </p>
+    </div>
+</body>
+<script src="../JAVASCRIPT/documents-list.js"></script>
+
+</html>

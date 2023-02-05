@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../CSS/shared.css"> <!--adding shared css-->
+    <style>
+        th,
+        td {
+            width: 20vw;
+            text-align: center;
+        }
+
+        input[type=text],
+        input[type=password],
+        input[type=email] {
+            width: 20vw;
+        }
+
+        .input_label {
+            text-align: right;
+        }
+
+        table {
+            margin: auto;
+            border-spacing: 20px;
+        }
+
+        input[type=submit] {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="font-prop-shared">
+    <br>
+    <br>
+    <form action="../HTML/register-success.html">
+        <table>
+            <tr>
+                <th></th>
+                <th>
+                    <h1>Register</h1>
+                </th>
+                <th></th>
+            </tr>
+            <tr>
+                <td class="input_label">Full Name</td>
+                <td><input type="text" name="full_name" id="" value="Anne Hunter" class="button-prop-shared"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="input_label">Email</td>
+                <td><input type="email" name="" id="" value="anne.hunter@mail.com" class="button-prop-shared"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="input_label">Password</td>
+                <td><input type="password" value="hunter" class="button-prop-shared"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="input_label">Confirm Password</td>
+                <td><input type="password" value="hunter" class="button-prop-shared"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Register" class="button-prop-shared" style="background-color: aqua;"></td>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+
+</html>

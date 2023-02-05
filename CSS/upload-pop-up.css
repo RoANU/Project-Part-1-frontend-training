@@ -1,0 +1,47 @@
+.upload-pop-up {
+    display: none;
+    position: fixed;
+    top: 40%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.upload-pop-up>p {
+    width: 400px;
+    text-align: left;
+    padding: 15px;
+    margin: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
+
+.upload-pop-up>p:nth-child(1) {
+    border: .19vw solid black;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.upload-pop-up>p:nth-child(2) {
+    border: .19vw solid black;
+    border-width: .19vw .19vw 0vw .19vw;
+}
+
+.upload-pop-up>p:nth-child(3) {
+    border: .19vw solid black;
+    border-width: .0vw .19vw .19vw .19vw;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.button-prop-shared {
+    background-color: white;
+}
+
+input::file-selector-button, button.button-prop-shared{
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-left: 30px;
+    background-color: rgb(160, 160, 160);
+    font-weight: bold;
+}
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../CSS/shared.css"> <!--adding shared css-->
+    <style>
+        .label {
+            display: inline-block;
+            width: 40%;
+            text-align: right;
+            margin-right: 1%;
+        }
+        .btn_submit{
+            background-color: aqua;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="font-prop-shared">
+    <br>
+    <br>
+    <h1 class="center-prop-shared">Login</h1>
+    <br>
+    <br>
+    <form action="../HTML/login-success.html">
+        <div>
+            <span class="label"><b>Email</b></span>
+            <span><input type="email" name="email" class="button-prop-shared center-prop-shared" size="30"/></span>
+        </div>
+        <br>
+        <br>
+        <div>
+            <span class="label"><b>Password</b></span>
+            <span><input type="password" name="password" id="" class="button-prop-shared center-prop-shared"  size="30"/></span>
+        </div>
+        <br>
+        <br>
+        <div class="center-prop-shared">
+            <input type="submit" value="Login" class="button-prop-shared btn_submit" />
+        </div>
+    </form>
+
+</body>
+
+</html>

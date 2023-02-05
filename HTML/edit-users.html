@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+    <link rel="stylesheet" href="../CSS/shared.css"> <!--adding shared css-->
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+            display: inline-block;
+            background-color: rgb(191, 191, 191);
+            border: .19vw solid black;
+            border-radius: 5px;
+        }
+
+        li {
+            width: 24.79vw;
+            display: inline-block;
+            float: left;
+            padding: 15px 0px;
+            text-align: center;
+            background-color: rgb(191, 191, 191);
+        }
+
+        .li-2 {
+            border-left: .15vw solid black;
+            border-right: .15vw solid black;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        .li-3 {
+            border-right: .15vw solid black;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        th,
+        td {
+            width: 20vw;
+            text-align: center;
+        }
+
+        input[type=text],
+        input[type=password],
+        input[type=email] {
+            width: 20vw;
+        }
+
+        .input_label {
+            text-align: right;
+        }
+
+        table {
+            margin: auto;
+            border-spacing: 20px;
+        }
+
+        input[type=submit] {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="font-prop-shared" style="margin: 0px;">
+    <ul>
+        <a href="../HTML/chat.html">
+            <li class="li-1">Group Chat</li>
+        </a>
+        <a href="../HTML/users-list.html">
+            <li class="li-2">Manage Users</li>
+        </a>
+        <a href="../HTML/documents-list.html">
+            <li class="li-3">Manage Documents</li>
+        </a>
+        <a href="../HTML/logout.html">
+            <li class="li-4">Logout</li>
+        </a>
+    </ul>
+
+    <br>
+    <br>
+    <form action="../HTML/users-list.html">
+        <table>
+            <tr>
+                <th></th>
+                <th>
+                    <h1>Edit User Information</h1>
+                </th>
+                <th></th>
+            </tr>
+            <tr>
+                <td class="input_label">Full Name</td>
+                <td><input type="text" name="full_name" id="" value="Anne Hunter" class="button-prop-shared"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="input_label">Email</td>
+                <td><input type="email" name="" id="" value="anne.hunter@mail.com" class="button-prop-shared"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Save" class="button-prop-shared" style="background-color: aqua;"></td>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
